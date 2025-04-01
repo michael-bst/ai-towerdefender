@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower Defender</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+        #gameContainer {
+            position: relative;
+        }
+        #gameCanvas {
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+        #gameInfo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+        #towerButtons {
+            position: absolute;
+            right: -120px;
+            top: 0;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        button {
+            padding: 8px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="600" height="400"></canvas>
+        <div id="gameInfo">
+            money: <span id="money">100</span>
+            lives: <span id="lives">10</span>
+            wave: <span id="wave">1</span>
+        </div>
+        <div id="towerButtons">
+            <button onclick="game.buyTower('basic')">basic ($50)</button>
+            <button onclick="game.buyTower('sniper')">sniper ($100)</button>
+            <button onclick="game.buyTower('aoe')">aoe ($150)</button>
+        </div>
+
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/tower.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
